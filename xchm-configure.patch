@@ -1,10 +1,11 @@
---- xchm-0.5.2/configure.in.orig	2003-08-04 10:31:58.000000000 +0200
-+++ xchm-0.5.2/configure.in	2003-08-04 21:34:12.000000000 +0200
+diff -Nur xchm-0.6.1.org/configure.in xchm-0.6.1/configure.in
+--- xchm-0.6.1.org/configure.in	2003-08-09 15:44:29.000000000 +0000
++++ xchm-0.6.1/configure.in	2003-08-10 12:49:30.000000000 +0000
 @@ -2,18 +2,23 @@
  AC_INIT(src/chmfile.cpp)
  AM_CONFIG_HEADER(config.h)
  
--CXXFLAGS="-W -Wall"
+-CXXFLAGS="-W -Wall" 
 +CXXFLAGS="$CXXFLAGS -W -Wall"
 +
 +AC_CHECK_PROG(WXCFG, wx-config, wx-config, no)
@@ -27,9 +28,9 @@
 -	      CXXFLAGS="$CXXFLAGS -O2")
 +	      CXXFLAGS="$CXXFLAGS -g")
  
- AM_INIT_AUTOMAKE(xchm, 0.5.2)
+ AM_INIT_AUTOMAKE(xchm, 0.6.1)
  AC_PROG_CXX
-@@ -25,11 +30,6 @@
+@@ -25,11 +30,5 @@
      AC_MSG_ERROR([Can't find/use -lchm. Please install CHMLIB first.])
  )
  
@@ -38,11 +39,12 @@
 -    AC_MSG_ERROR([wx-config not found in PATH. Do you have wxWindows installed?])
 -fi
 -
- 
+-
  AC_OUTPUT(Makefile src/Makefile)
  
---- xchm-0.5.2/src/Makefile.am.orig	2003-07-31 21:01:01.000000000 +0200
-+++ xchm-0.5.2/src/Makefile.am	2003-08-04 21:34:33.000000000 +0200
+diff -Nur xchm-0.6.1.org/src/Makefile.am xchm-0.6.1/src/Makefile.am
+--- xchm-0.6.1.org/src/Makefile.am	2003-08-06 00:01:53.000000000 +0000
++++ xchm-0.6.1/src/Makefile.am	2003-08-10 12:50:21.000000000 +0000
 @@ -1,4 +1,4 @@
 -INCLUDES = -I$(top_srcdir)/art `wx-config --cppflags`
 +INCLUDES = -I$(top_srcdir)/art `$(WXCFG) --cppflags`
