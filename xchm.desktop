@@ -2,7 +2,7 @@
 Name=xCHM
 Comment=CHM viewer
 Comment[pl]=Przeglądarka plików CHM
-Exec=chm
+Exec=xchm
 Icon=xchm.xpm
 StartupNotify=false
 Terminal=false
