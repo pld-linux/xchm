@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
-# Source0-md5:	56a4e6af5e859267c02858fc98887f92
+# Source0-md5:	295d41602f58fc60addde5dde6b5575f
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
