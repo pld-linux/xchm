@@ -1,16 +1,18 @@
 Summary:	CHM viewer for UNIX
 Summary(pl):	Przegl±darka CHM dla uniksów
 Name:		xchm
-Version:	0.8.11
+Version:	0.9
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
-# Source0-md5:	02e37bde39ccf6560db45812ab59987c
+# Source0-md5:	c2cdc266fbbf013f5b63fabcdaa8547b
+Source1:	%{name}-pl.po
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	chmlib-devel
+BuildRequires:	gettext-devel >= 0.11
 BuildRequires:	wxGTK2-devel >= 2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,7 +27,11 @@ CHMLIB Jeda Winga, z u¿yciem wxWindows.
 %prep
 %setup -q
 
+cp -f %{SOURCE1} po/pl.po
+echo 'pl' >> po/LINGUAS
+
 %build
+%{__gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -41,10 +47,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
