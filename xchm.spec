@@ -13,7 +13,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	chmlib-devel
 BuildRequires:	gettext-devel >= 0.11
-BuildRequires:	wxGTK2-devel >= 2.4.0
+BuildRequires:	wxGTK2-devel >= 2.5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +34,7 @@ CHMLIB Jeda Winga, z u¿yciem wxWindows.
 %{__autoheader}
 %{__automake}
 %configure \
-	WX_CONFIG_NAME=/usr/bin/wxgtk2-2.4-config
+	WX_CONFIG_NAME=/usr/bin/wx-gtk2-ansi-config
 
 %{__make}
 
