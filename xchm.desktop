@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=xCHM
+Comment=CHM viewer
+Comment[pl]=Przeglądarka plików CHM
+Exec=chm
+Icon=xchm.xpm
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=GTK;Graphics;Viewer;
+Encoding=UTF-8
+# vi: encoding=utf-8
