@@ -7,7 +7,6 @@ License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
 # Source0-md5:	d212fbe55ca5600834b56e7dcdcb63b4
-Source1:	%{name}-pl.po
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -26,9 +25,6 @@ CHMLIB Jeda Winga, z u¿yciem wxWindows.
 
 %prep
 %setup -q
-
-cp -f %{SOURCE1} po/pl.po
-echo 'pl' >> po/LINGUAS
 
 %build
 %{__gettextize}
