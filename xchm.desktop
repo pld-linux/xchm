@@ -7,6 +7,6 @@ Icon=xchm.xpm
 StartupNotify=false
 Terminal=false
 Type=Application
-Categories=GTK;Graphics;Viewer;
+Categories=GTK;Utility;
 Encoding=UTF-8
 # vi: encoding=utf-8
