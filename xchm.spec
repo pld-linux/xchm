@@ -1,12 +1,12 @@
 Summary:	CHM viewer for UNIX
 Summary(pl):	Przegl±darka CHM dla uniksów
 Name:		xchm
-Version:	0.8.4
+Version:	0.8.5
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
-# Source0-md5:	faf1ab179c2d2a29f4432fff1067d3b3
+# Source0-md5:	a98ac9d616af8bd4a419689bc44c3278
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
