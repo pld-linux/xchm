@@ -1,39 +1,52 @@
 Summary:	CHM viewer for UNIX
+Summary(pl):	Przegl±darka CHM dla uniksów
 Name:		xchm
-Version:	0.5
-Release:	0.1
+Version:	0.5.2
+Release:	1
 License:	GPL
-Group:		Applications/Networking
-Source0:	http://belnet.dl.sourceforge.net/sourceforge/xchm/xchm-0.5.tar.gz
-# Source0-md5:	18710e070c953b13be81953a8ce06637
+Group:		Applications/File
+Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
+# Source0-md5:	b8022ff45e2f61b8698f50f58a3a6086
+Patch0:		%{name}-configure.patch
 URL:		http://xchm.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	chmlib-devel
-BuildRequires:	wxWindows-devel
+BuildRequires:	wxGTK2-devel >= 2.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-CHM is a CHM viewer for UNIX, based on Jed Wing's CHMLIB and written with wxWindows.
+XCHM is a CHM viewer for UNIX, based on Jed Wing's CHMLIB and written
+with wxWindows.
+
+%description -l pl
+XCHM to przegl±darka plików CHM dla uniksa, napisana w oparciu o
+CHMLIB Jeda Winga, z u¿yciem wxWindows.
 
 %prep
-%setup -q 
+%setup -q
+%patch -p1
 
 %build
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	WXCFG=/usr/bin/wxgtk2-2.4-config
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
