@@ -1,12 +1,13 @@
 Summary:	CHM viewer for UNIX
 Summary(pl):	Przegl±darka CHM dla uniksów
 Name:		xchm
-Version:	0.9.4
+Version:	0.9.5
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
-# Source0-md5:	295d41602f58fc60addde5dde6b5575f
+# Source0-md5:	743c03c91a009a394fc1231f4a1d1e84
+Source1:	%{name}.desktop
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -40,8 +41,13 @@ CHMLIB Jeda Winga, z u¿yciem wxWindows.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install art/xchm-48.xpm	$RPM_BUILD_ROOT%{_pixmapsdir}/xchm.xpm
+install %{SOURCE1}	$RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name}
 
@@ -52,3 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
+%{_desktopdir}/*
+%{_pixmapsdir}/xchm.xpm
