@@ -17,12 +17,12 @@ BuildRequires:	wxGTK2-devel >= 2.5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-XCHM is a CHM viewer for UNIX, based on Jed Wing's CHMLIB and written
-with wxWindows.
+xCHM is a CHM viewer for UNIX, based on Jed Wing's CHMLIB and written
+with wxWidgets.
 
 %description -l pl
-XCHM to przegl±darka plików CHM dla Uniksa, napisana w oparciu o
-CHMLIB Jeda Winga, z u¿yciem wxWindows.
+xCHM to przegl±darka plików CHM dla Uniksa, napisana w oparciu o
+CHMLIB Jeda Winga, z u¿yciem wxWidgets.
 
 %prep
 %setup -q
