@@ -1,12 +1,12 @@
 Summary:	CHM viewer for UNIX
 Summary(pl):	Przegl±darka CHM dla Uniksów
 Name:		xchm
-Version:	1.0
+Version:	1.1
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
-# Source0-md5:	808e87a2a00683b5142e9f74398a20b4
+# Source0-md5:	801ce6a079e559bc5b7d814e86861500
 Source1:	%{name}.desktop
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
@@ -35,7 +35,6 @@ CHMLIB Jeda Winga, z u¿yciem wxWidgets.
 %{__automake}
 %configure \
 	WX_CONFIG_NAME=/usr/bin/wx-gtk2-ansi-config
-
 %{__make}
 
 %install
