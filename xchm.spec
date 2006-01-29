@@ -27,7 +27,7 @@ CHMLIB Jeda Winga, z u¿yciem wxWidgets.
 
 %prep
 %setup -q
-#patch0 -p1
+%patch0 -p1
 
 rm -f po/stamp-po
 
