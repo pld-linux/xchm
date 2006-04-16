@@ -8,6 +8,7 @@ Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
 # Source0-md5:	e9006ce834cce7dd7e0481049a366c48
 Source1:	%{name}.desktop
+Patch0:		%{name}-pl.po-update.patch
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -26,6 +27,7 @@ CHMLIB Jeda Winga, z u¿yciem wxWidgets.
 
 %prep
 %setup -q
+%patch0 -p1
 
 rm -f po/stamp-po po/*.gmo
 #some files have timestamp in the future
