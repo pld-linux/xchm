@@ -1,5 +1,5 @@
 Summary:	CHM viewer for UNIX
-Summary(pl.UTF-8):   Przeglądarka CHM dla Uniksów
+Summary(pl.UTF-8):	Przeglądarka CHM dla Uniksów
 Name:		xchm
 Version:	1.9
 Release:	1
