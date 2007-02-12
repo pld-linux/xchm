@@ -1,5 +1,5 @@
 Summary:	CHM viewer for UNIX
-Summary(pl):	Przegl±darka CHM dla Uniksów
+Summary(pl.UTF-8):   PrzeglÄ…darka CHM dla UniksÃ³w
 Name:		xchm
 Version:	1.9
 Release:	1
@@ -20,9 +20,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 xCHM is a CHM viewer for UNIX, based on Jed Wing's CHMLIB and written
 with wxWidgets.
 
-%description -l pl
-xCHM to przegl±darka plików CHM dla Uniksa, napisana w oparciu o
-CHMLIB Jeda Winga, z u¿yciem wxWidgets.
+%description -l pl.UTF-8
+xCHM to przeglÄ…darka plikÃ³w CHM dla Uniksa, napisana w oparciu o
+CHMLIB Jeda Winga, z uÅ¼yciem wxWidgets.
 
 %prep
 %setup -q
