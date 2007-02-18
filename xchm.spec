@@ -1,12 +1,12 @@
 Summary:	CHM viewer for UNIX
 Summary(pl.UTF-8):	Przeglądarka CHM dla Uniksów
 Name:		xchm
-Version:	1.9
+Version:	1.10
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
-# Source0-md5:	12e1faf49447c743c5c936636cd8a172
+# Source0-md5:	df4d42e3bb11187139f4475b89c4ab96
 Source1:	%{name}.desktop
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
@@ -47,6 +47,8 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 
 install art/xchm-48.xpm	$RPM_BUILD_ROOT%{_pixmapsdir}/xchm.xpm
 install %{SOURCE1}	$RPM_BUILD_ROOT%{_desktopdir}
+
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{pt_PT,pt}
 
 %find_lang %{name}
 
