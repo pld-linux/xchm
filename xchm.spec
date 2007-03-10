@@ -13,7 +13,6 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	chmlib-devel
 BuildRequires:	gettext-devel >= 0.11
-BuildRequires:	unixODBC-devel
 BuildRequires:	wxGTK2-devel >= 2.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
