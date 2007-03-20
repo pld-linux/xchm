@@ -19,7 +19,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	chmlib-devel
 BuildRequires:	gettext-devel >= 0.11
-BuildRequires:  wxGTK2-%{?with_unicode:unicode-}devel >= 2.6.0
+BuildRequires:	wxGTK2-%{?with_unicode:unicode-}devel >= 2.6.0
 %{?with_xmlrpc:BuildRequires:	xmlrpc++-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,7 +43,7 @@ CHMLIB Jeda Winga, z użyciem wxWidgets.
 %{__automake}
 %configure \
 	%{?with_xmlrpc:--enable-xmlrpc} \
-	WX_CONFIG_NAME=/usr/bin/wx-gtk2-%{!?with_unicode:ansi}%{?with_unicode:unicode}-config
+	WX_CONFIG_NAME=%{_bindir}/wx-gtk2-%{!?with_unicode:ansi}%{?with_unicode:unicode}-config
 %{__make}
 
 %install
