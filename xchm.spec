@@ -12,6 +12,7 @@ Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
 # Source0-md5:	59610ca44a8434a6909c4b4e944de940
 Source1:	%{name}.desktop
+Patch0:		%{name}-compile.patch
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -31,6 +32,7 @@ CHMLIB Jeda Winga, z użyciem wxWidgets.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gettextize}
