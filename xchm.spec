@@ -1,8 +1,12 @@
+#
+# Conditional build:
+%bcond_with	xmlrpc			# Enable XmlRpc functionality
+#
 Summary:	CHM viewer for UNIX
 Summary(pl.UTF-8):	Przeglądarka CHM dla Uniksów
 Name:		xchm
 Version:	1.11
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Applications/File
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
@@ -14,6 +18,7 @@ BuildRequires:	automake
 BuildRequires:	chmlib-devel
 BuildRequires:	gettext-devel >= 0.11
 BuildRequires:	wxGTK2-devel >= 2.6.0
+%{?with_xmlrpc:BuildRequires:	xmlrpc++-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,6 +39,7 @@ CHMLIB Jeda Winga, z użyciem wxWidgets.
 %{__autoheader}
 %{__automake}
 %configure \
+	%{?with_xmlrpc:--enable-xmlrpc} \
 	WX_CONFIG_NAME=/usr/bin/wx-gtk2-ansi-config
 %{__make}
 
