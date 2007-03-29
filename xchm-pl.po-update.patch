@@ -1,0 +1,103 @@
+--- xchm-1.11/po/pl.po.orig	2007-03-20 15:00:29.000000000 +0100
++++ xchm-1.11/po/pl.po	2007-03-29 19:37:19.895970469 +0200
+@@ -1,15 +1,15 @@
+ # Polish translation for xchm.
+ # This file is distributed under the same license as the xchm package.
+-# Jakub Bogusz <qboosh@pld-linux.org>, 2004-2006.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2004-2007.
+ #
+ # vi:encoding=utf-8
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: xchm 1.8\n"
++"Project-Id-Version: xchm 1.11\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2007-03-20 16:00+0200\n"
+-"PO-Revision-Date: 2006-05-27 18:50+0200\n"
++"PO-Revision-Date: 2007-03-29 19:30+0200\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+@@ -18,12 +18,11 @@
+ 
+ #: src/chmfile.cpp:233
+ msgid "Retrieving table of contents.."
+-msgstr ""
++msgstr "Odtwarzanie spisu treści..."
+ 
+ #: src/chmfile.cpp:234
+-#, fuzzy
+ msgid "Retrieving index.."
+-msgstr "Bez tytułu w indeksie"
++msgstr "Odtwarzanie indeksu..."
+ 
+ #: src/chmfile.cpp:235
+ msgid "Untitled in index"
+@@ -167,7 +166,7 @@
+ 
+ #: src/chmframe.cpp:605
+ msgid "Loading, please wait.."
+-msgstr ""
++msgstr "Wczytywanie, proszę czekać..."
+ 
+ #: src/chmframe.cpp:718
+ msgid "&Open..\tCtrl-O"
+@@ -315,7 +314,7 @@
+ 
+ #: src/chmhtmlwindow.cpp:49
+ msgid "&Save link as.."
+-msgstr ""
++msgstr "&Zapisz odnośnik jako..."
+ 
+ #: src/chmhtmlwindow.cpp:52
+ msgid "&Copy selection"
+@@ -327,31 +326,31 @@
+ 
+ #: src/chmhtmlwindow.cpp:304
+ msgid "OpenFile("
+-msgstr ""
++msgstr "OpenFile("
+ 
+ #: src/chmhtmlwindow.cpp:304
+ msgid ") failed"
+-msgstr ""
++msgstr ") nie powiodło się"
+ 
+ #: src/chmhtmlwindow.cpp:305 src/chmhtmlwindow.cpp:327
+ msgid "Error"
+-msgstr ""
++msgstr "Błąd"
+ 
+ #: src/chmhtmlwindow.cpp:315
+ msgid "Save as"
+-msgstr ""
++msgstr "Zapisz jako"
+ 
+ #: src/chmhtmlwindow.cpp:326
+ msgid "Error creating file "
+-msgstr ""
++msgstr "Błąd tworzenia pliku "
+ 
+ #: src/chmhtmlwindow.cpp:335
+ msgid "Saved file "
+-msgstr ""
++msgstr "Zapisano plik "
+ 
+ #: src/chmhtmlwindow.cpp:336
+ msgid "Success"
+-msgstr ""
++msgstr "Sukces"
+ 
+ #: src/chmsearchpanel.cpp:47
+ msgid "Get partial matches"
+@@ -372,9 +371,3 @@
+ #: src/chmsearchpanel.cpp:54
+ msgid "Search contents for occurences of the specified text."
+ msgstr "Poszukiwanie w treści wystąpień podanego tekstu."
+-
+-#~ msgid "Couldn't extract the book contents tree."
+-#~ msgstr "Nie można rozpakować drzewa zawartości książki."
+-
+-#~ msgid "No contents.."
+-#~ msgstr "Brak zawartości..."
