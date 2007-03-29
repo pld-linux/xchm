@@ -19,7 +19,7 @@ URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	chmlib-devel
-BuildRequires:	gettext-devel >= 0.11
+BuildRequires:	gettext-devel >= 0.14.3
 BuildRequires:	wxGTK2-%{?with_unicode:unicode-}devel >= 2.6.0
 %{?with_xmlrpc:BuildRequires:	xmlrpc++-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
