@@ -8,4 +8,5 @@ StartupNotify=false
 Terminal=false
 Type=Application
 Categories=GTK;Utility;
+MimeType=application/x-chm;
 # vi: encoding=utf-8
