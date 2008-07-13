@@ -1,15 +1,15 @@
 #
 # Conditional build:
-%bcond_with	xmlrpc			# Enable XmlRpc functionality
-%bcond_without	unicode			# unicode version of wxGTK2
+%bcond_with	xmlrpc		# Enable XmlRpc functionality
+%bcond_without	unicode		# unicode version of wxGTK2
 #
 Summary:	CHM viewer for UNIX
 Summary(pl.UTF-8):	Przeglądarka CHM dla Uniksów
 Name:		xchm
 Version:	1.14
-Release:	1
+Release:	2
 License:	GPL
-Group:		Applications/File
+Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
 # Source0-md5:	0f398af788a9e1a7c6f4e65b5ca31cf3
 Source1:	%{name}.desktop
@@ -21,6 +21,7 @@ BuildRequires:	chmlib-devel
 BuildRequires:	gettext-devel >= 0.14.3
 BuildRequires:	wxGTK2-%{?with_unicode:unicode-}devel >= 2.6.0
 %{?with_xmlrpc:BuildRequires:	xmlrpc++-devel}
+Requires(post,postun):	desktop-file-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,12 +65,18 @@ mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{pt_PT,pt}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_desktop_database
+
+%postun
+%update_desktop_database_postun
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %if %{with xmlrpc}
 %doc README.xmlrpc
 %endif
-%attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/*.desktop
+%attr(755,root,root) %{_bindir}/xchm
+%{_desktopdir}/xchm.desktop
 %{_pixmapsdir}/*.xpm
