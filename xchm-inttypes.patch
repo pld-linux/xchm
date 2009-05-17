@@ -1,0 +1,24 @@
+--- xchm-1.16/src/chmfile.h.old	2009-05-17 15:31:42.000000000 +0200
++++ xchm-1.16/src/chmfile.h	2009-05-17 15:37:27.000000000 +0200
+@@ -24,6 +24,10 @@
+ #define __CHMFILE_H_
+ 
+ #include <config.h>
++
++/* for uint32_t */
++#include <inttypes.h>
++
+ #include <chm_lib.h>
+ #include <wx/filefn.h>
+ #include <wx/string.h>
+--- xchm-1.16/src/bitfiddle.inl.old	2009-05-17 15:33:26.000000000 +0200
++++ xchm-1.16/src/bitfiddle.inl	2009-05-17 15:38:28.000000000 +0200
+@@ -21,7 +21,7 @@
+ 
+ */
+ 
+-
++#include <inttypes.h>
+ #include <wx/string.h>
+ 
+ 
