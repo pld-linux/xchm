@@ -1,25 +1,29 @@
 #
 # Conditional build:
-%bcond_with	xmlrpc		# Enable XmlRpc functionality
+%bcond_with	xmlrpc		# enable XmlRpc functionality
 %bcond_without	unicode		# unicode version of wxGTK2
 #
 Summary:	CHM viewer for UNIX
 Summary(pl.UTF-8):	Przeglądarka CHM dla Uniksów
 Name:		xchm
-Version:	1.17
+Version:	1.18
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/xchm/%{name}-%{version}.tar.gz
-# Source0-md5:	4f34bc046fcc59f1af590d8eb1e08934
+Source0:	http://downloads.sourceforge.net/xchm/%{name}-%{version}.tar.gz
+# Source0-md5:	07d7a910b3216301a002be5630c71866
 Source1:	%{name}.desktop
 URL:		http://xchm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	chmlib-devel
 BuildRequires:	gettext-devel >= 0.14.3
-BuildRequires:	wxGTK2-%{?with_unicode:unicode-}devel >= 2.6.0
-%{?with_xmlrpc:BuildRequires:	xmlrpc++-devel}
+BuildRequires:	wxGTK2-%{?with_unicode:unicode-}devel >= 2.8.0
+%if %{with xmlrpc}
+# for configure check
+BuildRequires:	openssl-devel
+BuildRequires:	xmlrpc++-devel
+%endif
 Requires(post,postun):	desktop-file-utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -71,10 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
-%if %{with xmlrpc}
-%doc README.xmlrpc
-%endif
+%doc AUTHORS ChangeLog README %{?with_xmlrpc:README.xmlrpc}
 %attr(755,root,root) %{_bindir}/xchm
 %{_desktopdir}/xchm.desktop
-%{_pixmapsdir}/*.xpm
+%{_pixmapsdir}/xchm*.xpm
