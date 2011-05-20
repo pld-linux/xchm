@@ -1,0 +1,105 @@
+--- xchm-1.20/po/pl.po.orig	2011-05-06 12:51:17.000000000 +0200
++++ xchm-1.20/po/pl.po	2011-05-20 16:50:33.742972078 +0200
+@@ -1,15 +1,15 @@
+ # Polish translation for xchm.
+ # This file is distributed under the same license as the xchm package.
+-# Jakub Bogusz <qboosh@pld-linux.org>, 2004-2007.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2004-2011.
+ #
+ # vi:encoding=utf-8
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: xchm 1.11\n"
++"Project-Id-Version: xchm 1.20\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2011-05-06 13:51+0300\n"
+-"PO-Revision-Date: 2007-03-29 19:30+0200\n"
++"PO-Revision-Date: 2011-05-20 16:45+0200\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "Language: pl\n"
+@@ -115,12 +115,11 @@
+ 
+ #: src/chmframe.cpp:59
+ msgid "Close the current tab"
+-msgstr ""
++msgstr "Zamknij bieżącą zakładkę"
+ 
+ #: src/chmframe.cpp:60
+-#, fuzzy
+ msgid "Open a new tab"
+-msgstr "Otworzenie książki CHM."
++msgstr "Otwórz nową zakładkę"
+ 
+ #: src/chmframe.cpp:61
+ msgid "Associate the .chm file extension with xCHM."
+@@ -175,9 +174,8 @@
+ msgstr "Wy&drukuj stronę...\tCtrl-P"
+ 
+ #: src/chmframe.cpp:765
+-#, fuzzy
+ msgid "Fon&ts.."
+-msgstr "Fonty..."
++msgstr "Fon&ty..."
+ 
+ #: src/chmframe.cpp:768
+ msgid "&Show contents tree\tCtrl-S"
+@@ -204,14 +202,12 @@
+ msgstr "&Początek\tCtrl-H"
+ 
+ #: src/chmframe.cpp:798
+-#, fuzzy
+ msgid "For&ward\tAlt-RIGHT"
+-msgstr "&W przód\tCtrl-W"
++msgstr "&W przód\tAlt-Prawo"
+ 
+ #: src/chmframe.cpp:800
+-#, fuzzy
+ msgid "&Back\tAlt-LEFT"
+-msgstr "W &tył\tCtrl-B"
++msgstr "W &tył\tAlt-Lewo"
+ 
+ #: src/chmframe.cpp:803
+ msgid "&About..\tF1"
+@@ -226,14 +222,12 @@
+ msgstr "&Znajdź...\tCtrl-F"
+ 
+ #: src/chmframe.cpp:809
+-#, fuzzy
+ msgid "&Close tab\tCtrl-W"
+-msgstr "&Początek\tCtrl-H"
++msgstr "Za&mknij zakładkę\tCtrl-W"
+ 
+ #: src/chmframe.cpp:810
+-#, fuzzy
+ msgid "&New tab\tCtrl-T"
+-msgstr "Fon&ty...\tCtrl-T"
++msgstr "&Nowa zakładka\tCtrl-T"
+ 
+ #: src/chmframe.cpp:813
+ msgid "&File"
+@@ -329,7 +323,7 @@
+ 
+ #: src/chmhtmlwindow.cpp:52
+ msgid "&Open in a new tab"
+-msgstr ""
++msgstr "&Otwórz w nowej zakładce"
+ 
+ #: src/chmhtmlwindow.cpp:55
+ msgid "&Copy selection"
+@@ -386,14 +380,3 @@
+ #: src/chmsearchpanel.cpp:55
+ msgid "Search contents for occurences of the specified text."
+ msgstr "Poszukiwanie w treści wystąpień podanego tekstu."
+-
+-#~ msgid ""
+-#~ "This is experimental code, and doing this will overwrite any previously "
+-#~ "registered CHM viewer associations.\n"
+-#~ "\n"
+-#~ "Are you sure you know what you're doing?"
+-#~ msgstr ""
+-#~ "Ten kod jest eksperymentalny i wykonanie go nadpisze wszystkie poprzednio "
+-#~ "zarejestrowane powiązania przeglądarek CHM.\n"
+-#~ "\n"
+-#~ "Na pewno wiesz co robisz?"
