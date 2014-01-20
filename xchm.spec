@@ -63,7 +63,8 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 install art/xchm-48.xpm	$RPM_BUILD_ROOT%{_pixmapsdir}/xchm.xpm
 install %{SOURCE1}	$RPM_BUILD_ROOT%{_desktopdir}
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{pt_PT,pt}
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{pt_PT,pt}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/gr
 
 %find_lang %{name}
 
