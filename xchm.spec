@@ -14,8 +14,9 @@ Source0:	http://downloads.sourceforge.net/xchm/%{name}-%{version}.tar.gz
 # Source0-md5:	486d029bd81071a2d04e7181909b1602
 Source1:	%{name}.desktop
 Patch0:		wxWidgets3.patch
+Patch1:		%{name}-pl.po-update.patch
 URL:		http://xchm.sourceforge.net/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	chmlib-devel
 BuildRequires:	gettext-devel >= 0.14.3
@@ -39,6 +40,7 @@ CHMLIB Jeda Winga, z użyciem wxWidgets.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %{__rm} po/stamp-po
 
@@ -63,8 +65,10 @@ install -d $RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir}}
 install art/xchm-48.xpm	$RPM_BUILD_ROOT%{_pixmapsdir}/xchm.xpm
 install %{SOURCE1}	$RPM_BUILD_ROOT%{_desktopdir}
 
+# unify to short code pt=pt_PT
 %{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{pt_PT,pt}
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/gr
+# fix Greek language code
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{gr,el}
 
 %find_lang %{name}
 
@@ -82,4 +86,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog README %{?with_xmlrpc:README.xmlrpc}
 %attr(755,root,root) %{_bindir}/xchm
 %{_desktopdir}/xchm.desktop
+%{_pixmapsdir}/xchm*.png
 %{_pixmapsdir}/xchm*.xpm
